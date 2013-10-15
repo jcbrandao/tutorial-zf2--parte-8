@@ -7,7 +7,8 @@
  */
 return array(
     'modules' => array(
-        'Contato'
+        'Contato',
+        'ZendDeveloperTools',
         ),
     'module_listener_options' => array(
         'module_paths' => array(

@@ -9,6 +9,7 @@ return array(
     'modules' => array(
         'Contato',
         'ZendDeveloperTools',
+        'BjyProfiler',
         ),
     'module_listener_options' => array(
         'module_paths' => array(

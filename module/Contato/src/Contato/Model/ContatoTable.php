@@ -10,6 +10,7 @@ use //Zend\Db\Adapter\Adapter,
 
 class ContatoTable
 {
+
     protected $tableGateway;
 
     /**
@@ -49,4 +50,26 @@ class ContatoTable
 
         return $row;
     }
+
+    /**
+     * Inserir um novo contato
+     * 
+     * @param \Contato\Model\Contato $contato
+     * @return id
+     */
+    public function save(Contato $contato)
+    {
+        $timeNow = new \DateTime();
+        
+        $data = [
+            'nome'                  => $contato->nome,
+            'telefone_principal'    => $contato->telefone_principal,
+            'telefone_secundario'   => $contato->telefone_secundario,
+            'data_criacao'          => $timeNow->format('Y-m-d H:i:s'), 
+            'data_atualizacao'      => $timeNow->format('Y-m-d H:i:s'), # data de criação igual a de atualização 
+        ];
+        
+        return $this->tableGateway->insert($data);
+    }
+
 }

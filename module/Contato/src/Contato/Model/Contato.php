@@ -30,12 +30,7 @@ class Contato implements InputFilterAwareInterface
         $this->data_criacao = (!empty($data['data_criacao'])) ? $data['data_criacao'] : null;
         $this->data_atualizacao = (!empty($data['data_atualizacao'])) ? $data['data_atualizacao'] : null;
     }
-
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
-    }
-
+    
     /**
      * Método obrigatório de implementação da interface InputFilterAwareInterface, 
      * não utilizaremos esse método para nada, logo lançamos uma exception em 

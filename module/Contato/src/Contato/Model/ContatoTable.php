@@ -96,5 +96,14 @@ class ContatoTable
             throw new \Exception("Contato #{$id} inexistente");
         }
     }
-
+    
+    /**
+     * Deletar um contato existente
+     * 
+     * @param type $id
+     */
+    public function delete($id)
+    {
+        $this->tableGateway->delete(array('id' => (int) $id));
+    }
 }
